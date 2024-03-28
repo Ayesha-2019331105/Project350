@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<h1>Hello World</h1>
+<form method="POST" action="{{ url_for('index') }}">
+    <input type="text" name="username" placeholder="username"><br>
+    <input type="password" name="password" placeholder="password"><br>
+    <input type="submit" value="login"><br>
+</form>
+
+<h1>File upload</h1>
+<form method="POST" action="{{ url_for('file_upload') }}" enctype="multipart/form-data">
+    <input type="file" name="file" accept="*/*">
+    <input type="submit" value="upload file">
+</form>
+{% endblock %}
