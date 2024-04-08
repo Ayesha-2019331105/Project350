@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from PIL import Image
 import io
+import os
 app = Flask(__name__, template_folder='templates')
 
 
@@ -32,6 +33,11 @@ def file_upload():
         image = Image.open(image_stream)
         # Display the image (you may need to render it in a template or use another method depending on your application)
         image.show()
+        try:
+            os.mkdir('test/')
+        except:
+            pass
+        image.save('test/name01.png')
         # Optionally, you can return a response to indicate that the image was processed successfully
         return 'Image uploaded and displayed successfully'
     else:
