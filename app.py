@@ -9,15 +9,7 @@ CORS(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    if request.method == 'GET':
-        return render_template('index.html')
-    elif request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        if username == 'Ayesha' and password == 'password':
-            return "success"
-        else:
-            return "failure"
+    return ""
 
 
 @app.route('/fileupload', methods=['POST'])
